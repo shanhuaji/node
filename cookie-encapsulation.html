@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* obj接收对象 */
+      /* key是属性 value是值 path是路径  expires是几日之后 */
+      /* 设置cookie */
+      function setCookie(key, value, ops) {
+        if (!ops) {
+          /* 对应的实参没有值时就是undefined */
+          ops = "undefined";
+        }
+        var date = new Date();
+        date.setDate(date.getDate() + ops.expires);
+
+        document.cookie =
+          //   key + "=" + value + ";path=" + ops.path + ";expires=" + date;
+          document.cookie = `${key}=${value};path=${ops.path};expires=${date}`;
+      }
+
+      /* setCookie("bb", "123", {
+        path: "/day28",
+        expires: 2,
+      }); */
+
+      /* 删除cookie */
+      function removecookie(key, value, ops) {
+        setCookie(key, value, ops);
+      }
+      /* removecookie("e", "123", {
+        path: "/",
+        expires: -1,
+      }); */
+
+      /* 改 */
+      function getCookie(key, value, ops) {
+        setCookie(key, value, ops);
+      }
+      getCookie("bb", "11", {
+        path: "/day28",
+        expires: 1,
+      });
+    </script>
+  </body>
+</html>

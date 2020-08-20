@@ -1,0 +1,6 @@
+写在前端
+<!-- <script src="http://127.0.0.1/JS2004/test/php/table.php?callback=hehe"></script> -->
+    <!-- 写在后端的  确定是否传值callback -->
+    <!-- $fnname = isset($_GET['callback']) ? $_GET['callback'] : 'fn'; -->
+        <!-- 没传函数名就写fn  传了就写callback后边的 -->
+    <!-- $fnname.'('.$data.')'  -->
